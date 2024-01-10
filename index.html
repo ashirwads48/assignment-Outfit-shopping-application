@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>  .tabs {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+  }
+  .badge-text {
+  position: absolute;
+  left: 15;
+  background-color: white;
+  color: black;
+}
+.discount-text{
+  color: red;
+}
+
+  .tabs button {
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      padding: 10px 20px;
+      cursor: pointer;
+  }
+  .dark-mode {
+  color:red;
+}
+
+  .tabs button:hover {
+      background-color: #ddd;
+  }
+
+  .product-card {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin: 10px;
+      width: 300px;
+      box-sizing: border-box;
+  }
+
+  .product-card img {
+      width: 100%;
+      height: auto;
+  }
+  .header__title{
+    text-align: center;
+  }
+
+  .add-to-cart-btn {
+      background-color:black;
+      color: white;
+      padding: 10px;
+      margin-top: 10px;
+      border: none;
+      cursor: pointer;
+  }</style>
+    <script src="./js/script.js" type="module"></script>
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Shopping Cart</title>
+  </head>
+  <body>
+    <div class="allProductsApp">
+      <header class="header">
+        <h2 class="header__title">Select Your Choice</h2>
+       
+        <div class="header__icon">
+          🛒 <span class="header__icon--total">0</span>
+        </div>
+      </header>
+       <div class="tabs">
+        <button id="menButton" onclick="toggleButton('menButton')">Men</button>
+        <button id="womenButton" onclick="toggleButton('womenButton')">Women</button>
+        <button id="kidsButton" onclick="toggleButton('kidsButton')">Kids</button>
+      </div>
+      </div>
+      <main class="container">
+        <div class="products"></div>
+      </main>
+    </div>
+
+    <div class="shoppingCartApp">
+      <header class="header">
+        <h2 class="header__title">
+          <a class="btn" href="./index.html">Go back</a>
+        </h2>
+      </header>
+      <main class="container">
+        <section class="shopping-cart">
+          <h2>Total price: <span class="totalPrice">0</span>$</h2>
+          <div class="cart-items">
+            <div class="item"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script>function toggleButton(buttonId) {
+      const button = document.getElementById(buttonId);
+      
+      button.classList.toggle('dark-mode');
+      
+      const otherButtons = document.querySelectorAll('.tabs button:not(#' + buttonId + ')');
+      otherButtons.forEach((otherButton) => {
+        otherButton.classList.remove('dark-mode');
+      });
+    }</script>
+    
+  </body>
+</html>
