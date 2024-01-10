@@ -9,7 +9,7 @@ const iconQtyAction = document.querySelector('.header__icon');
 
 function fetchData(catagory) {
   const cat=catagory
-  fetch('../products.json')
+  fetch('https://cdn.shopify.com/s/files/1/0564/3685/0790/files/multiProduct.json')
     .then((data) => data.json())
     .then((response) => {console.log(response);displayData(response,cat)})
     .catch((err) => console.error(err.message));
